@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Zan PHP Framework</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first-screen">
+            <header class="hd">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="guide.html">入门</a></li>
+                        <li><a href="https://agalwood.gitbooks.io/zan-doc/content/zh/">文档</a></li>
+                        <li><a href="sample.html">示例</a></li>
+                        <li><a href="http://tech.youzan.com/tag/zanphp">博客</a></li>
+                        <li><a href="https://github.com/youzan/zan/issues">社区</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="intro">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="img/zan-logo-small.png" alt="zanphp logo" srcset="img/zan-logo-small.png 1x, img/zan-logo-small@2x.png 2x, img/zan-logo-small.png">
+                    </a>
+                </h1>
+                <h2 class="brand">Zan PHP Framework</h2>
+                <p class="desc">
+                    提供最简单的方式开发面向C10K+的
+                    <br />高并发HTTP服务或SOA服务
+                </p>
+                <p><a href="https://github.com/youzan/zan-installer" class="btn btn-primary">快速上手</a></p>
+            </section>
+        </div>
+        <section class="endorse">
+            <h2 class="section-title">有赞亿级页面访问量的验证</h2>
+            <p class="desc">3万笔/秒交易处理速度</p>
+            <div class="section-content">
+                <figure>
+                    <img src="img/youzan-intro.png" alt="youzan intro" srcset="img/youzan-intro.png 1x, img/youzan-intro@2x.png 2x, img/youzan-intro.png">
+                </figure>
+            </div>
+        </section>
+        <section class="features">
+            <h2 class="section-title">核心特性</h2>
+            <div class="section-content">
+                <ul>
+                    <li>基于 yield 实现了独立堆栈的协程</li>
+                    <li>类似于 Golang 的并发编程模型实现</li>
+                    <li>基于 swoole 提供非阻塞I/O服务</li>
+                    <li>连接池支持（内置MySQL、Redis、syslog等多种组件）</li>
+                    <li>类似 Golang 的defer机制解决由于异常导致的资源未释放、锁未释放的问题</li>
+                    <li>可继承的View布局及组件化支持，方便完成bigPipe/bigRender/首屏加载优化等不同的渲染方式</li>
+                    <li>基于模型驱动的SQLMap，实现了SQL的快速定位及方便的sharding、cache支持</li>
+                    <li>提供类似于 Laravel 的middleware(Filters &amp; Terminators)机制</li>
+                    <li>Di及单元测试的良好支持</li>
+                    <li>良好的服务化对接支持</li>
+                </ul>
+            </div>
+        </section>
+        <section class="about-youzan">
+            <h2 class="section-title">关于有赞</h2>
+            <div class="section-content">
+                2012年11月27号，有赞由杭州起码科技有限公司在贝塔咖啡孵化。<br />3 年来有赞扎根移动电商，专注为各类大小企业提供日益完善的产品服务，同时竭力为平台所有消费者提供更好的消费体验和购物保障。从最初的一个在线营销和企业展示工具，到现在的全套移动电商产品服务方案，有赞希望能助力更多商家在移动电商时代拔得头筹！
+            </div>
+            <footer class="copyright">
+                <a href="https://youzan.com/" class="youzan-logo">
+                    <img src="img/youzan-logo.png" alt="youzan intro" srcset="img/youzan-logo.png 1x, img/youzan-logo@2x.png 2x, img/youzan-logo.png">
+                </a>
+                <p>© Youzan.com, Inc.</p>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>
