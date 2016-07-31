@@ -76,11 +76,9 @@ gulp.task('clean', (done) => {
 gulp.task('copy', [
     'copy:.htaccess',
     'copy:index.html',
-    'copy:jquery',
     'copy:license',
     'copy:main.css',
-    'copy:misc',
-    'copy:normalize'
+    'copy:misc'
 ]);
 
 gulp.task('copy:.htaccess', () =>
@@ -91,14 +89,7 @@ gulp.task('copy:.htaccess', () =>
 
 gulp.task('copy:index.html', () =>
     gulp.src(`${dirs.src}/index.html`)
-        .pipe(plugins().replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
         .pipe(gulp.dest(dirs.dist))
-);
-
-gulp.task('copy:jquery', () =>
-    gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-        .pipe(plugins().rename(`jquery-${pkg.devDependencies.jquery}.min.js`))
-        .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
 );
 
 gulp.task('copy:license', () =>
@@ -126,7 +117,7 @@ gulp.task('watch', function () {
 
 gulp.task('copy:main.css', () => {
 
-    const banner = `/*! HTML5 Boilerplate v${pkg.version} | ${pkg.license.type} License | ${pkg.homepage} */\n\n`;
+    const banner = `/*! Zanphp.io v${pkg.version} | ${pkg.license.type} License | ${pkg.homepage} */\n\n`;
 
     gulp.src(`${dirs.src}/css/main.css`)
         .pipe(plugins().header(banner))
@@ -154,11 +145,6 @@ gulp.task('copy:misc', () =>
         dot: true
 
     }).pipe(gulp.dest(dirs.dist))
-);
-
-gulp.task('copy:normalize', () =>
-    gulp.src('node_modules/normalize.css/normalize.css')
-        .pipe(gulp.dest(`${dirs.dist}/css`))
 );
 
 gulp.task('lint:js', () =>
