@@ -826,6 +826,14 @@ h6 {
   margin-top: 0;
   margin-bottom: .5rem; }
 
+.for-weixin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden; }
+
 .first-screen {
   min-height: 100vh; }
 
