@@ -851,7 +851,10 @@ h6 {
     list-style: none; }
     .main-nav ul > li a {
       color: #969696;
-      text-decoration: none; }
+      text-decoration: none;
+      transition: color .2s linear; }
+      .main-nav ul > li a:hover {
+        color: #33A5ED; }
 
 .section-title {
   font-size: 1.75rem;
@@ -888,11 +891,22 @@ h6 {
     margin: 0 0 2.5rem;
     line-height: 1.375rem;
     color: #666666; }
-  .intro .btn.btn-primary {
-    padding: 0.625rem 2rem;
-    font-size: 0.875rem;
-    border-radius: 100px;
-    border: none; }
+  .intro .btn {
+    border-radius: 100rem; }
+    .intro .btn.btn-primary {
+      padding: 0.75rem 2rem;
+      font-size: 0.875rem;
+      line-height: 0.875rem; }
+    .intro .btn.btn-secondary {
+      font-size: 0;
+      padding: 0.625rem;
+      line-height: 0.875rem;
+      font-size: 0.875rem; }
+      .intro .btn.btn-secondary svg,
+      .intro .btn.btn-secondary span {
+        vertical-align: middle; }
+  .intro .btn + .btn {
+    margin-left: 0.5rem; }
 
 .endorse,
 .features,

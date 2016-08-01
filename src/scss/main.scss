@@ -72,6 +72,10 @@ h6 {
             a {
                 color: $gray-light;
                 text-decoration: none;
+                transition: color .2s linear;
+                &:hover {
+                    color: $link-color;
+                }
             }
         }
     }
@@ -118,11 +122,26 @@ h6 {
         line-height: 1.375rem;
         color: $gray;
     }
-    .btn.btn-primary {
-        padding: 0.625rem 2rem;
-        font-size: $font-size-sm;
-        border-radius: 100px;
-        border: none;
+    .btn {
+        border-radius: 100rem;
+        &.btn-primary {
+            padding: 0.75rem 2rem;
+            font-size: $font-size-sm;
+            line-height: $font-size-sm;
+        }
+        &.btn-secondary {
+            font-size: 0;
+            padding: 0.625rem;
+            line-height: $font-size-sm;
+            font-size: $font-size-sm;
+            svg,
+            span {
+                vertical-align: middle;
+            }
+        }
+    }
+    .btn + .btn {
+        margin-left: 0.5rem;
     }
 }
 
