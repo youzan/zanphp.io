@@ -835,7 +835,9 @@ h6 {
   overflow: hidden; }
 
 .first-screen {
-  min-height: 100vh; }
+  min-height: 618px;
+  height: 100vh;
+  max-height: 768px; }
 
 .hd {
   padding-top: 2rem;
@@ -892,7 +894,8 @@ h6 {
     line-height: 1.375rem;
     color: #666666; }
   .intro .btn {
-    border-radius: 100rem; }
+    border-radius: 100rem;
+    transition: background-color .1s linear; }
     .intro .btn.btn-primary {
       padding: 0.75rem 2rem;
       font-size: 0.875rem;

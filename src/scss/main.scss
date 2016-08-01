@@ -52,7 +52,9 @@ h6 {
 }
 
 .first-screen {
-    min-height: 100vh;
+    min-height: 618px;
+    height: 100vh;
+    max-height: 768px;
 }
 
 .hd {
@@ -124,6 +126,7 @@ h6 {
     }
     .btn {
         border-radius: 100rem;
+        transition: background-color .1s linear;
         &.btn-primary {
             padding: 0.75rem 2rem;
             font-size: $font-size-sm;
