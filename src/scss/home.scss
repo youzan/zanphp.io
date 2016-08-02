@@ -1,61 +1,5 @@
 @import "variables";
 @import "mixins";
-@import "normalize";
-@import "reboot";
-@import "buttons";
-html {
-    // Sets a specific default `font-size` for user with `rem` type scales.
-    font-size: $font-size-root;
-    // As a side-effect of setting the @viewport above,
-    // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
-    // Unfortunately, the auto-showing of the scrollbar is sometimes too sensitive,
-    // thus making it hard to click on stuff near the right edge of the page.
-    // So we add this style to force IE11 & Edge to use a "normal", non-overlapping, non-auto-hiding scrollbar.
-    // See https://github.com/twbs/bootstrap/issues/18543
-    -ms-overflow-style: scrollbar;
-    // Changes the default tap highlight to be completely transparent in iOS.
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-body {
-    // Make the `body` use the `font-size-root`
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    // Go easy on the eyes and use something other than `#000` for text
-    color: $body-color;
-    // By default, `<body>` has no `background-color` so we set one as a best practice.
-    background-color: $body-bg;
-}
-
-// Remove top margins from headings
-//
-// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
-// margin for easier control within type scales as it avoids margin collapsing.
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 0;
-    margin-bottom: .5rem;
-}
-
-.for-weixin {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-.first-screen {
-    min-height: 618px;
-    height: 100vh;
-    max-height: 768px;
-}
 
 .hd {
     padding-top: 2rem;
@@ -106,6 +50,14 @@ h6 {
         text-align: center;
         &> a {
             display: inline-block;
+            width: 13.125rem;
+            height: 13.125rem;
+        }
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
     h2 {
@@ -207,13 +159,5 @@ h6 {
         margin: 0 auto;
         padding: 0 1rem;
         max-width: 560px;
-    }
-    .copyright {
-        color: $gray-light;
-        margin-top: 4rem;
-        font-size: 0.75rem;
-        p {
-            margin: 0.875rem 0 0;
-        }
     }
 }

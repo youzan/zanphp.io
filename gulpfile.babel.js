@@ -77,7 +77,6 @@ gulp.task('copy', [
     'copy:.htaccess',
     'copy:index.html',
     'copy:license',
-    'copy:main.css',
     'copy:misc'
 ]);
 
@@ -100,6 +99,10 @@ gulp.task('copy:license', () =>
 gulp.task('sass', function () {
     return gulp.src(`${dirs.src}/scss/**/*.scss`)
         .pipe(sass().on('error', sass.logError))
+        .pipe(plugins().autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
+            cascade: false
+        }))
         .pipe(gulp.dest(`${dirs.src}/css`))
         .pipe(livereload());
 });
@@ -108,24 +111,25 @@ gulp.task('html', function () {
     return gulp.src(`${dirs.src}/*.html`)
         .pipe(livereload());
 });
- 
-gulp.task('watch', function () {
+
+gulp.task('live', [
+    'live:init',
+    'live:html',
+    'live:sass',
+]);
+
+gulp.task('live:init', function () {
     livereload.listen();
-    gulp.watch(`${dirs.src}/*.html`, ['html']);
-    gulp.watch(`${dirs.src}/scss/**/*.scss`, ['sass']);
 });
 
-gulp.task('copy:main.css', () => {
+gulp.task('live:html', function () {
+    livereload.listen();
+    gulp.watch(`${dirs.src}/*.html`, ['html']);
+});
 
-    const banner = `/*! Zanphp.io v${pkg.version} | ${pkg.license.type} License | ${pkg.homepage} */\n\n`;
-
-    gulp.src(`${dirs.src}/css/main.css`)
-        .pipe(plugins().header(banner))
-        .pipe(plugins().autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
-            cascade: false
-        }))
-        .pipe(gulp.dest(`${dirs.dist}/css`));
+gulp.task('live:sass', function () {
+    livereload.listen();
+    gulp.watch(`${dirs.src}/scss/**/*.scss`, ['sass']);
 });
 
 gulp.task('copy:misc', () =>
@@ -136,7 +140,7 @@ gulp.task('copy:misc', () =>
 
         // Exclude the following files
         // (other tasks will handle the copying of these files)
-        `!${dirs.src}/css/main.css`,
+        `!${dirs.src}/scss/**/*.scss`,
         `!${dirs.src}/index.html`
 
     ], {
@@ -162,6 +166,13 @@ gulp.task('lint:js', () =>
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
+
+gulp.task('watch', (done) => {
+    runSequence(
+        'sass',
+        'live',
+    done)
+});
 
 gulp.task('archive', (done) => {
     runSequence(
