@@ -3,7 +3,7 @@
 
 .hd {
     padding-top: 2rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
 }
 
 .main-nav {
@@ -50,14 +50,12 @@
         text-align: center;
         &> a {
             display: inline-block;
-            width: 13.125rem;
-            height: 13.125rem;
+            width: 18.75rem;
+            height: 18.75rem;
         }
-        img, svg {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
+        svg {
+            width: 100%;
+            height: 100%;
         }
     }
     h2 {
@@ -163,12 +161,15 @@
 }
 
 .logo {
-     #Line {
+    #php {
+        transform: scale(0.0001);
+    }
+     .line {
         animation: .4s line ease forwards;
         transform-origin: center center;
         opacity: 0;
     }
-    #Line:nth-child(2n) {
+    .line:nth-child(2n) {
         animation: .5s line ease .2s forwards;
     }
 }
