@@ -140,7 +140,7 @@ gulp.task('copy:misc', () =>
 
         // Exclude the following files
         // (other tasks will handle the copying of these files)
-        `!${dirs.src}/scss/**/*.scss`,
+        `!${dirs.src}/scss/**/*`,
         `!${dirs.src}/index.html`
 
     ], {
