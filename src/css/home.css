@@ -41,7 +41,7 @@
       display: inline-block;
       width: 13.125rem;
       height: 13.125rem; }
-    .intro h1.logo img {
+    .intro h1.logo img, .intro h1.logo svg {
       width: auto;
       height: auto;
       max-width: 100%;
@@ -127,3 +127,51 @@
   margin: 0 auto;
   padding: 0 1rem;
   max-width: 560px; }
+
+.logo #Line {
+  -webkit-animation: .4s line ease forwards;
+  animation: .4s line ease forwards;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  opacity: 0; }
+
+.logo #Line:nth-child(2n) {
+  -webkit-animation: .5s line ease .2s forwards;
+  animation: .5s line ease .2s forwards; }
+
+@-webkit-keyframes line {
+  0% {
+    -webkit-transform: scale(0.5, 1);
+    transform: scale(0.5, 1);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1; } }
+
+@keyframes line {
+  0% {
+    -webkit-transform: scale(0.5, 1);
+    transform: scale(0.5, 1);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1; } }
+
+@-webkit-keyframes php-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg); } }
+
+@keyframes php-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg); } }
