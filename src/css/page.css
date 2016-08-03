@@ -122,6 +122,8 @@
     width: 1.75rem;
     height: 1.75rem;
     line-height: 1.75rem; }
+  .article-content .tag {
+    letter-spacing: 0px; }
   .article-content .circle-tag + .tag {
     margin-left: 1rem; }
   .article-content figure {
