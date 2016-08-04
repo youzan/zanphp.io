@@ -50,8 +50,8 @@
         text-align: center;
         &> a {
             display: inline-block;
-            width: 14.25rem;
-            height: 14.25rem;
+            width: 18.75rem;
+            height: 18.75rem;
         }
         svg {
             width: 100%;
@@ -157,5 +157,30 @@
         margin: 0 auto;
         padding: 0 1rem;
         max-width: 560px;
+    }
+}
+
+.logo {
+    #php {
+        transform: scale(0.0001);
+    }
+     .line {
+        animation: .4s line ease forwards;
+        transform-origin: center center;
+        opacity: 0;
+    }
+    .line:nth-child(2n) {
+        animation: .5s line ease .2s forwards;
+    }
+}
+
+@keyframes line {
+    0% {
+        transform: scale(.5, 1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
     }
 }
