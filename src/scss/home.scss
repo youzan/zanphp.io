@@ -1,6 +1,5 @@
 @import "variables";
 @import "mixins";
-
 .hd {
     padding-top: 2rem;
     margin-bottom: 4rem;
@@ -160,11 +159,11 @@
     }
 }
 
-.logo {
+.intro .logo {
     #php {
         transform: scale(0.0001);
     }
-     .line {
+    .line {
         animation: .4s line ease forwards;
         transform-origin: center center;
         opacity: 0;
