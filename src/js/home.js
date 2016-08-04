@@ -1,34 +1,46 @@
 (function() {
-    var lastTime = 0
-    var vendors = ['ms', 'moz', 'webkit', 'o']
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[`${vendors[x]}RequestAnimationFrame`]
-        window.cancelAnimationFrame = window[`${vendors[x]}CancelAnimationFrame`]
-                                    || window[`${vendors[x]}CancelRequestAnimationFrame`]
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
 
-    if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function(callback) {
-            var currTime = new Date().getTime()
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime))
-            var id = window.setTimeout(function() {callback(currTime + timeToCall), timeToCall})
-            lastTime = currTime + timeToCall
-            return id
-        }
-    }
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
 
-    if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function(id) {clearTimeout(id)}
-    }
-})()
-
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
 
 var php = document.querySelector('#php')
 php.style.transformOrigin = 'center'
 php.style.WebkitTransformOrigin = 'center'
 var percent = 0
 var start = Date.now()
-requestAnimationFrame(round)
+
+function back(progress) {
+    var x = 1.3
+    return Math.pow(progress, 2) * ((x + 1) * progress - x)
+}
+
+function makeEaseOut(delta) {
+    return function(progress) {
+        return 1 - delta(1 - progress)
+    }
+}
+
+var delta = makeEaseOut(back)
+
 function round() {
     var rid = requestAnimationFrame(round)
     var current = Date.now()
@@ -51,19 +63,8 @@ function round() {
     var x = Math.cos(angle) * pathR + offsetCircle + phpR
     var y = Math.sin(angle) * pathR + offsetCircle + phpR
 
-    php.style.transform = 'translate3d(' + x + 'px, ' + y +'px, 0) scale(' + scale + ')'
-    php.style.WebkitTransform = 'translate3d(' + x + 'px, ' + y +'px, 0) scale(' + scale + ')'
+    php.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0) scale(' + scale + ')'
+    php.style.WebkitTransform = 'translate3d(' + x + 'px, ' + y + 'px, 0) scale(' + scale + ')'
 }
 
-function back(progress) {
-    var x = 1.3
-    return Math.pow(progress, 2) * ((x + 1) * progress - x)
-}
-
-function makeEaseOut(delta) {
-    return function(progress) {
-        return 1 - delta(1 - progress)
-    }
-}
-
-var delta = makeEaseOut(back)
+requestAnimationFrame(round)
