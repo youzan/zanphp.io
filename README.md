@@ -4,6 +4,8 @@
 
 Design & Code by [Dr_rOot](https://github.com/agalwood)
 
+Thank [Kay](https://github.com/Raistlin916) contributed cool logo animation!
+
 See it [http://zanphp.io/](http://zanphp.io/) online.
 
 ## License
