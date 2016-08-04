@@ -126,12 +126,12 @@
   padding: 0 1rem;
   max-width: 560px; }
 
-.logo #php {
+.intro .logo #php {
   -webkit-transform: scale(0.0001);
   -ms-transform: scale(0.0001);
   transform: scale(0.0001); }
 
-.logo .line {
+.intro .logo .line {
   -webkit-animation: .4s line ease forwards;
   animation: .4s line ease forwards;
   -webkit-transform-origin: center center;
@@ -139,7 +139,7 @@
   transform-origin: center center;
   opacity: 0; }
 
-.logo .line:nth-child(2n) {
+.intro .logo .line:nth-child(2n) {
   -webkit-animation: .5s line ease .2s forwards;
   animation: .5s line ease .2s forwards; }
 
