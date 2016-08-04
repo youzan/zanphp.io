@@ -1,6 +1,6 @@
 .hd {
   padding-top: 2rem;
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 .main-nav ul {
   margin: 0;
@@ -49,7 +49,7 @@
     letter-spacing: -1.24px;
     font-family: -apple-system-headline2, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: normal;
-    margin-top: 2rem;
+    margin-top: 0;
     margin-bottom: 0.875rem; }
   .intro .desc {
     font-family: -apple-system-subheadline1, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
