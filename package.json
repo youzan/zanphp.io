@@ -51,7 +51,8 @@
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
-    "archive": "gulp archive"
+    "archive": "gulp archive",
+    "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
   },
   "version": "1.0.0"
 }
