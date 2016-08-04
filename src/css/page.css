@@ -71,6 +71,8 @@
 
 .article-container {
   margin-bottom: 3rem; }
+  .article-container article {
+    margin-bottom: 3rem; }
 
 .article-title h1 {
   font-family: -apple-system-headline2, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
