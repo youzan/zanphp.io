@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>入门 - Zan PHP Framework</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/page.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <header class="hd">
+                <h1 class="logo"><a href="index.html">Zan</a></h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="active"><a href="guide.html">入门</a></li>
+                        <li><a href="http://doc.zanphp.io/zh/">文档</a></li>
+                        <li><a href="https://github.com/youzan/zan">源码</a></li>
+                        <li><a href="http://tech.youzan.com/tag/zanphp">博客</a></li>
+                        <li><a href="https://github.com/youzan/zan/issues">社区</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="row">
+                <aside class="col-md-3 side-nav">
+                    <h3>快速上手</h3>
+                    <ul>
+                        <li><a href="">基础环境</a></li>
+                        <li><a href="guide.html">脚手架工具 zan-installer</a></li>
+                        <li class="active"><a href="config.html">Config 配置</a></li>
+                    </ul>
+                </aside>
+                <div class="col-md-9 article-container">
+                    <article id="config">
+                        <header class="article-title">
+                            <h1>Config 配置</h1>
+                        </header>
+                        <section class="article-content">
+                            <div class="article-paragraph">
+                                正常配置文件都放在 $ROOTPATH/resource/config/$ENV  文件夹下，下面以test环境举例，结构如下：
+                            </div>
+                            <div class="article-paragraph">
+                                <script src="https://gist.github.com/agalwood/4a32675ae46e5ba6628e06ac8aa45499.js"></script>
+                            </div>
+                        </section>
+                    </article>
+                    <article id="config-server">
+                        <header class="article-title">
+                            <h1>Config Server 配置</h1>
+                        </header>
+                        <section class="article-content">
+                            <div class="article-paragraph">
+                                <script src="https://gist.github.com/agalwood/495484f1ee9726d7e2ba19cbb0c269dd.js"></script>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="ft">
+            <footer class="copyright">
+                <a href="https://youzan.com/" class="youzan-logo">
+                    <img src="img/youzan-logo.png" alt="youzan logo" srcset="img/youzan-logo.png 1x, img/youzan-logo@2x.png 2x, img/youzan-logo.png">
+                </a>
+                <p>© Youzan.com, Inc.</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?37c5b85b2ff0c7ab9421485f8bf48b8d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+
+</html>
