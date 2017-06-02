@@ -41,7 +41,6 @@
       .main-nav ul > li a {
         color: #969696;
         text-decoration: none;
-        -webkit-transition: color .2s linear;
         transition: color .2s linear; }
         .main-nav ul > li a:hover {
           color: #33A5ED; }
@@ -57,7 +56,6 @@
   .side-nav a {
     color: #666666;
     text-decoration: none;
-    -webkit-transition: color .2s linear;
     transition: color .2s linear; }
     .side-nav a:hover {
       color: #33A5ED; }
